@@ -1,0 +1,15 @@
+body {
+	background-color: #42C0FB;
+	color:#fff;
+	text-transform: uppercase;
+	font-size:32px;
+}
+
+#clock {
+	height:960px;
+	width:1080px;
+}
+
+canvas {
+	background-color: #fff;
+}
