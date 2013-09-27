@@ -73,10 +73,36 @@ function resetRubberbandRectangle() {
 
 canvas.onmousedown = function (e) {
 	var x = e.clientX,
-	var y = e.clientY;
+		y = e.clientY;
 	e.preventDefault();
 	rubberbandStart(x,y);
 };
+
+window.onmousemove = function(e) {
+	var x = e.clientX,
+		y = e.clientY;
+	e.preventDefault();
+	if(dragging) {
+		rubberbandStretch(x,y);
+	}	
+};
+
+window.onmouseup = function (e) {
+	e.preventDefault();
+	rubberbandEnd();
+};
+
+image.onload = function () {
+	context.drawImage(image, 0, 0, canvas.width, canvas.height);
+};
+
+resetButton.onclick = function(e) {
+	context.clearRect(0,0, context.canvas.width,
+							context.canvas.height);
+	context.drawImage(image, 0, 0, canvas.width, canvas.height);
+};
+
+image.src = 'images/mountains.jpg';
 
 
 
