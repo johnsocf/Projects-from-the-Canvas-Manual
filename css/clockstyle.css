@@ -10,6 +10,19 @@ body {
 	width:1080px;
 }
 
+#snapshotImageElement {
+	position: absolute;
+	left: 10px;
+	top: 1.5em;
+	margin: 20px;
+	border: thin solid #aaaaa;
+}
+
 canvas {
 	background-color: #fff;
+	position: absolute;
+	left: 10px;
+	top: 1.5em;
+	margin: 20px;
+	border:thin solid #aaaa;
 }

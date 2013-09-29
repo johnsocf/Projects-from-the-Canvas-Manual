@@ -1,8 +1,8 @@
-var canvas = getElementbyId("canvas"),
+var canvas = document.getElementById("canvas"),
 	context = canvas.getContext("2d"),
-	rubberbandDiv = document.getElementbyId("rubberbandDiv"),
-	resetButton = document.getElementbyId("resetButton"),
-	image = new Image();
+	rubberbandDiv = document.getElementById("rubberbandDiv"),
+	resetButton = document.getElementById("resetButton"),
+	image = new Image(),
 	mousedown = {},
 	rubberbandRectangle = {},
 	dragging = false;
@@ -13,7 +13,7 @@ function rubberbandStart(x,y) {
 	rubberbandRectangle.left = mousedown.x;
 	rubberbandRectangle.top = mousedown.y;
 	moveRubberbandDiv();
-	moveRubberbandDiv();
+	showRubberbandDiv();
 	dragging = true;
 }	
 
@@ -33,11 +33,11 @@ function rubberbandEnd() {
 
 	try {
 		context.drawImage(canvas,
-						rubberbandRectangle.left-bbox.left,
-						rubberbandRectangle.top - bbox.top,
-						rubberbandRectangle.width,
-						rubberbandRectangle.height,
-						0, 0, canvas.width, canvas, height);
+				rubberbandRectangle.left - bbox.left,
+				rubberbandRectangle.top - bbox.top,
+				rubberbandRectangle.width,
+				rubberbandRectangle.height,
+				0, 0, canvas.width, canvas.height);
 	}
 	catch (e) {
 		// error message, outside of canvas
@@ -63,7 +63,7 @@ function showRubberbandDiv() {
 	rubberbandDiv.style.display = 'inline';
 }
 
-function hiderubberbandDiv() {
+function hideRubberbandDiv() {
 	rubberbandDiv.style.display = "none";
 }
 
@@ -72,19 +72,23 @@ function resetRubberbandRectangle() {
 }
 
 canvas.onmousedown = function (e) {
-	var x = e.clientX,
-		y = e.clientY;
+	var x = e.x || e.clientX,
+		y = e.y || e.clientY;
+
 	e.preventDefault();
 	rubberbandStart(x,y);
+
 };
 
 window.onmousemove = function(e) {
-	var x = e.clientX,
-		y = e.clientY;
+	var x = e.x || e.clientX,
+		y = e.y || e.clientY;
 	e.preventDefault();
-	if(dragging) {
+
+	if (dragging) {
 		rubberbandStretch(x,y);
 	}	
+
 };
 
 window.onmouseup = function (e) {
