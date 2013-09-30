@@ -1,0 +1,19 @@
+body {
+	background: #eeeee;
+}
+
+#controls {
+	position: absolute;
+	left: 25px;
+	top: 25px;
+}
+
+#canvas {
+	background: #fffff;
+	cursor: pointer;
+	margin-left:10px;
+	margin-top:10px;
+	-webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+	-moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+	box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+}

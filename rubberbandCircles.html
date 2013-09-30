@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>canvas works</title>
+	<link href="css/bandlinesStyle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div id="controls">
+	Stroke color: <select id="strokeStyleSelect">
+	<option value="red">red</option>
+	<option value="green">green</option>
+	<option value="blue">blue</option>
+	<option value="orange">orange</option>
+	<option value="cornflowerblue" selected>cornflowerblue</option>
+	<option value="goldenrod">goldenrod</option>
+	<option value="navy">navy</option>
+	<option value="purple">purple</option>
+	</select>
+
+	Fill: <input id="fillCheckbox" type="checkbox" checked/>
+
+	Guidewires:
+	<input id="guidewireCheckbox" type="checkbox" checked/>
+	<input id="eraseAllButton" type="button" value="Erase all"/>
+</div>	
+
+
+<canvas width="600" height="400" id="canvas">Canvas</canvas>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/rubberbandCircles.js"></script>
+</body>
+</html>
