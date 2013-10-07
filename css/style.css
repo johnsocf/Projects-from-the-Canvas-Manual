@@ -1,15 +1,34 @@
 body {
 	background-color: #42C0FB;
-	color:#fff;
+	color:#000;
 	text-transform: uppercase;
-	font-size:32px;
+	font-size:20px;
 }
 
-#clock {
-	height:960px;
-	width:1080px;
+#canvas {
+	border: 1px solid cornflowerblue;
+	position: absolute;
+	left: 150px;
+	top: 10px;
+	background: #eeeee;
+	border: thin solid #aaaaa;
+	cursor: pointer;
+	-webkit-box-shadow: rgba(200, 200, 255, 0.9) 5px 5px 10px;
+	-moz-box-shadow: rgba(200, 200, 255, 0.9) 5px 5px 10px;
+	box-shadow: rgba(200, 200, 255, 0.9) 5px 5px 10px;
 }
 
 canvas {
 	background-color: #fff;
 }
+
+#compositingSelect {
+	position: absolute;
+	top: 50%;
+}
+
+#controls {
+         position: absolute;
+         left: 25px;
+         top: 25px;
+      }
